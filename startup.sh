@@ -14,7 +14,7 @@ if [ "$role" = "worker" ]; then
       sleep 30
   done
 
-  php artisan horizon
+  su www-data -s /bin/sh -c 'php /var/www/artisan horizon'
 
 elif [ "$role" = "cron" ]; then
 
